@@ -9,8 +9,8 @@ const DB_URI = 'mongodb+srv://ThangPham:PasswordThangPham@webwiz.jz3o0.mongodb.n
 
 mongoose.connect(DB_URI).then(()=>{
     console.log('Remote DB Connected');
-    app.listen(process.env.PORT||5000,()=>{
-        console.log('Server listening in port 5000')
+    app.listen(process.env.PORT,()=>{
+        console.log('Server listening')
     })
 }).catch((e)=>{
     console.log(e);
