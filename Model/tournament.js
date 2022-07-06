@@ -27,7 +27,8 @@ const tournament = new mongoose.Schema({
               matchName: String,
               players: [String],
               winner: String,
-              loser: String
+              loser: String,
+              status:Boolean
             },
             {
               matchId: {
@@ -37,7 +38,8 @@ const tournament = new mongoose.Schema({
               matchName: String,
               players: [String],
               winner: String,
-              loser: String
+              loser: String,
+              status:Boolean
             }
           ]
         },
@@ -52,7 +54,8 @@ const tournament = new mongoose.Schema({
           matchName: String,
           players: [String],
           winner: String,
-          loser: String
+          loser: String,
+          status:Boolean
         },
         final: {
           matchId: {
@@ -62,7 +65,8 @@ const tournament = new mongoose.Schema({
           matchName: String,
           players: [String],
           winner: String,
-          loser: String
+          loser: String,
+          status:Boolean
         }
       
 },{})
