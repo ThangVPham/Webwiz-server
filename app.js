@@ -7,10 +7,11 @@ const cors = require('cors');
 const { response } = require('express');
 const DB_URI = 'mongodb+srv://ThangPham:PasswordThangPham@webwiz.jz3o0.mongodb.net/Tournament?retryWrites=true&w=majority'
 
+
 mongoose.connect(DB_URI).then(()=>{
     console.log('Remote DB Connected');
     app.listen(process.env.PORT,()=>{
-        console.log('Server listening')
+        console.log('Server listening ')
     })
 }).catch((e)=>{
     console.log(e);
@@ -59,4 +60,11 @@ app.post('/addplayers/:id', async(req,res)=>{
 app.get('/addplayers/:id', async(req,res)=>{
     let tournament = await Tournament.findById({_id:req.params.id});
     res.send(tournament);
+})
+app.delete('/delete/:id', async(req,res)=>{
+    let id = req.params.id;
+   
+    await Tournament.deleteOne({_id:id});
+    res.redirect('/');
+
 })
