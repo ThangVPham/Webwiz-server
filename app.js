@@ -12,7 +12,7 @@ const DB_URI =
   "mongodb+srv://ThangPham:PasswordThangPham@webwiz.jz3o0.mongodb.net/Tournament?retryWrites=true&w=majority";
 
 const PORT = 5000;
-console.log(process.env.AUTH);
+
 mongoose
   .connect(DB_URI)
   .then(() => {

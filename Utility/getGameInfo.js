@@ -5,6 +5,7 @@ const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 async function getGameID(name) {
+  console.log(process.env.AUTH);
   return fetch("https://api.igdb.com/v4/games", {
     method: "POST",
     headers: {
