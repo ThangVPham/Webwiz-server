@@ -17,7 +17,7 @@ mongoose
   .connect(DB_URI)
   .then(() => {
     console.log("Remote DB Connected");
-    app.listen(process.env.PORT || PORT, () => {
+    app.listen(process.env.PORT, () => {
       console.log(`Server listening on ${process.env.PORT}`);
     });
   })
