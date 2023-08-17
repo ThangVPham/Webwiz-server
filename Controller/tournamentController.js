@@ -3,6 +3,7 @@ const Tournament = require("../Model/tournament");
 const getAllTournaments = async (req, res) => {
   try {
     let tournaments = await Tournament.find();
+
     res.send(tournaments);
   } catch (e) {
     console.log(e.message);
