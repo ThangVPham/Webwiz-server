@@ -14,7 +14,6 @@ const getAllTournaments = async (req, res) => {
 const createNewTournament = async (req, res) => {
   try {
     const newTourney = req.body;
-    console.log(newTourney);
     await Tournament.create(newTourney);
     res.end();
   } catch (e) {
@@ -27,6 +26,7 @@ const getTournamentById = async (req, res) => {
   try {
     const id = req.params.id;
     let tournament = await Tournament.findById(id);
+    console.log(tournament);
     res.send(tournament);
   } catch (e) {
     console.log(e.message);

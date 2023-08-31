@@ -5,7 +5,6 @@ const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 async function getGameID(name) {
-  console.log("here");
   return fetch("https://api.igdb.com/v4/games", {
     method: "POST",
     headers: {
@@ -17,7 +16,6 @@ async function getGameID(name) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.length) {
         return data;
       } else {

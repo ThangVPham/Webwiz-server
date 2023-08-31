@@ -29,15 +29,15 @@ app.use(bodyParser.json());
 app.use(tournamentRoutes);
 app.use(searchGameRoutes);
 
-app.post("/addplayers/:id", async (req, res) => {
-  let id = req.params.id;
-  let updatedTourney = req.body;
-
-  await Tournament.updateOne({ _id: id }, updatedTourney);
-  console.log("added players");
-  res.redirect(`/tournaments/${id}`);
-});
-app.get("/addplayers/:id", async (req, res) => {
-  let tournament = await Tournament.findById({ _id: req.params.id });
-  res.send(tournament);
-});
+// app.post("/addplayers/:id", async (req, res) => {
+//   let id = req.params.id;
+//   let updatedTourney = req.body;
+//   console.log("adding players");
+//   await Tournament.updateOne({ _id: id }, updatedTourney);
+//   console.log("added players");
+//   res.redirect(`/tournaments/${id}`);
+// });
+// app.get("/addplayers/:id", async (req, res) => {
+//   let tournament = await Tournament.findById({ _id: req.params.id });
+//   res.send(tournament);
+// });
